@@ -1,0 +1,30 @@
+{
+  "name": "knowmine",
+  "version": "1.5.0",
+  "description": "Save notes and decisions during AI conversations. Search them later by meaning, not keywords. Your knowledge base that works across all your AI sessions.",
+  "author": {
+    "name": "YIING99",
+    "url": "https://github.com/YIING99"
+  },
+  "homepage": "https://knowmine.ai",
+  "repository": "https://github.com/YIING99/knowmine-claude-plugin",
+  "license": "MIT",
+  "keywords": ["knowledge-base", "memory", "semantic-search", "mcp", "notes", "productivity"],
+  "userConfig": {
+    "KNOWMINE_API_KEY": {
+      "title": "KnowMine API Key",
+      "description": "Your KnowMine MCP API key (starts with km_mcp_). Get it at https://knowmine.ai/settings/mcp",
+      "type": "string",
+      "sensitive": true
+    }
+  },
+  "mcpServers": {
+    "knowmine": {
+      "type": "http",
+      "url": "https://knowmine.ai/api/mcp",
+      "headers": {
+        "Authorization": "Bearer ${user_config.KNOWMINE_API_KEY}"
+      }
+    }
+  }
+}
